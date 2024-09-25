@@ -1,0 +1,22 @@
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/bootsnap-1.18.4/ext/bootsnap
+/Users/labern/.rbenv/versions/3.3.5/bin/ruby extconf.rb
+checking for fdatasync() in unistd.h... yes
+checking for whether -D_GNU_SOURCE is accepted as CPPFLAGS... yes
+checking for whether -O3 is accepted as CFLAGS... yes
+checking for whether -std=c99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/bootsnap-1.18.4/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-g70uku sitelibdir\=./.gem.20240925-23201-g70uku clean
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/bootsnap-1.18.4/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-g70uku sitelibdir\=./.gem.20240925-23201-g70uku
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/bootsnap-1.18.4/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-g70uku sitelibdir\=./.gem.20240925-23201-g70uku install
+/opt/homebrew/bin/ginstall -c -m 0755 bootsnap.bundle ./.gem.20240925-23201-g70uku/bootsnap
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/bootsnap-1.18.4/ext/bootsnap
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-g70uku sitelibdir\=./.gem.20240925-23201-g70uku clean

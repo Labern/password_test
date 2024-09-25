@@ -1,0 +1,29 @@
+<h1>Get your account</h1>
+
+<%= form_with model: @user do |f| %>
+    <% if @user.errors.any? %>
+        <div>
+            <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <div>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+    <div>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+    </div>
+    <div>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+    </div>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>

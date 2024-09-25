@@ -1,0 +1,16 @@
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/json-2.7.2/ext/json
+/Users/labern/.rbenv/versions/3.3.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/json-2.7.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-tn4by sitelibdir\=./.gem.20240925-23201-tn4by clean
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/json-2.7.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-tn4by sitelibdir\=./.gem.20240925-23201-tn4by
+make: Nothing to be done for `all'.
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/json-2.7.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-tn4by sitelibdir\=./.gem.20240925-23201-tn4by install
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/json-2.7.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-tn4by sitelibdir\=./.gem.20240925-23201-tn4by clean

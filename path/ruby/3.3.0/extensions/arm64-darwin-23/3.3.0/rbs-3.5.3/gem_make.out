@@ -1,0 +1,27 @@
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/rbs-3.5.3/ext/rbs_extension
+/Users/labern/.rbenv/versions/3.3.5/bin/ruby extconf.rb
+checking for whether -std=gnu99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/rbs-3.5.3/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20240925-26173-5qp2jg sitelibdir\=./.gem.20240925-26173-5qp2jg clean
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/rbs-3.5.3/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20240925-26173-5qp2jg sitelibdir\=./.gem.20240925-26173-5qp2jg
+compiling constants.c
+compiling lexer.c
+compiling lexstate.c
+compiling location.c
+compiling main.c
+compiling parser.c
+compiling parserstate.c
+compiling ruby_objs.c
+compiling unescape.c
+linking shared-object rbs_extension.bundle
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/rbs-3.5.3/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20240925-26173-5qp2jg sitelibdir\=./.gem.20240925-26173-5qp2jg install
+/opt/homebrew/bin/ginstall -c -m 0755 rbs_extension.bundle ./.gem.20240925-26173-5qp2jg
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/rbs-3.5.3/ext/rbs_extension
+make DESTDIR\= sitearchdir\=./.gem.20240925-26173-5qp2jg sitelibdir\=./.gem.20240925-26173-5qp2jg clean

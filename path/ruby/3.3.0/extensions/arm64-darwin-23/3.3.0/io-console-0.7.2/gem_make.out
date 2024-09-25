@@ -1,0 +1,27 @@
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+/Users/labern/.rbenv/versions/3.3.5/bin/ruby extconf.rb
+checking for rb_io_path()... yes
+checking for rb_io_descriptor()... yes
+checking for rb_io_get_write_io()... yes
+checking for rb_io_closed_p()... yes
+checking for rb_io_open_descriptor()... yes
+checking for termios.h... yes
+checking for cfmakeraw() in termios.h... yes
+checking for sys/ioctl.h... yes
+checking for HAVE_RUBY_FIBER_SCHEDULER_H... yes
+creating Makefile
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-f6p2ml sitelibdir\=./.gem.20240925-23201-f6p2ml clean
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-f6p2ml sitelibdir\=./.gem.20240925-23201-f6p2ml
+compiling console.c
+linking shared-object io/console.bundle
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-f6p2ml sitelibdir\=./.gem.20240925-23201-f6p2ml install
+/opt/homebrew/bin/ginstall -c -m 0755 console.bundle ./.gem.20240925-23201-f6p2ml/io
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/io-console-0.7.2/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-f6p2ml sitelibdir\=./.gem.20240925-23201-f6p2ml clean

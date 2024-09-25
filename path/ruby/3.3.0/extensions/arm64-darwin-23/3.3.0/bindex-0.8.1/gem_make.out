@@ -1,0 +1,18 @@
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/labern/.rbenv/versions/3.3.5/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-6iy4hs sitelibdir\=./.gem.20240925-23201-6iy4hs clean
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-6iy4hs sitelibdir\=./.gem.20240925-23201-6iy4hs
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-6iy4hs sitelibdir\=./.gem.20240925-23201-6iy4hs install
+/opt/homebrew/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20240925-23201-6iy4hs/skiptrace/internal
+
+current directory: /Users/labern/Developer/Rails/password_test/path/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20240925-23201-6iy4hs sitelibdir\=./.gem.20240925-23201-6iy4hs clean
