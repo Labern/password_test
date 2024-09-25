@@ -1,29 +1,34 @@
-<h1>Get your account</h1>
+<h1 class="centre">Create your account</h1>
 
-<%= form_with model: @user do |f| %>
-    <% if @user.errors.any? %>
-        <div>
-            <ul>
-                <% @user.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                <% end %>
-            </ul>
-        </div>
+<div class="messages">
+    <%= form_with model: @user do |f| %>
+        <% if @user.errors.any? %>
+            <div>
+                <ul>
+                    <% @user.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
     <% end %>
+</div>
 
+<div id="signup">
     <div>
         <%= f.label :name %>
-        <%= f.text_field :name %>
+        <%= f.text_field :name %><br />
     </div>
     <div>
         <%= f.label :password %>
-        <%= f.password_field :password %>
+        <%= f.password_field :password %><br />
     </div>
     <div>
         <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation %>
+        <%= f.password_field :password_confirmation %><br />
     </div>
-    <p>
+    <p class="centre">
         <%= f.submit %>
     </p>
 <% end %>
+
+</div>

@@ -1,24 +1,23 @@
-# README
+# Authentication
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://dev.to/kevinluo201/building-a-simple-authentication-in-rails-7-from-scratch-2dhb
 
-Things you may want to cover:
+Install <code>BCrypt</code> with <code>bundle</code>.
 
-* Ruby version
+Create model user with <code>name</code>, <code>password</code>, and <code>password_confirmation</code>.
 
-* System dependencies
+Create users_controller with index, new, and create.
 
-* Configuration
+Create routes: resources :user, only: [:index, :new, :create].
 
-* Database creation
+Edit the controller: index has @users = User.all; new has @user = User.new; create has @user = User.new(user_params); add if @user.save with notice and flash; add private instance method user_params that has params.require(:user).permit(:name, :password, :password_confirmation).
 
-* Database initialization
+Create the views using form_for model: @user. Also print the messages via @user.errors.any? and @user.errors.full_messages in a block.
 
-* How to run the test suite
+Add flash messages block in application layout.
 
-* Services (job queues, cache servers, search engines, etc.)
+Query the database via SELECT id, name, password_digest FROM users.
 
-* Deployment instructions
+Add tests.
 
-* ...
+Then build login.

@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+html {
+    font-family: "Inter";
+}
+
+.centre {
+    text-align: center;
+}
+
+#signup {
+    margin: auto;
+    width: 30%;
+    padding: 1rem;
+    background: pink;
+    border-radius: 50px;
+ }
+
+input, 
+label, 
+.messages {
+    margin-bottom: 20px;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    letter-spacing: 3px;
+ }
+
+ input {
+    width: 80%;
+    display: block;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 25px;    
+    margin: 0 auto;
+ }
+
+ .messages li {
+    list-style-type: none;
+ }
