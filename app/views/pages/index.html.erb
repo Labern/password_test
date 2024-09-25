@@ -1,0 +1,8 @@
+<% if current_user %>
+    <h1>Welcome, <%= current_user %></h1>
+<% else %>
+    <h1>Index Page</h1>
+    <%= link_to "Login", new_user_session_path %></br />
+<% end %>
+
+<%= link_to "Secret page", "/pages/secret" %>

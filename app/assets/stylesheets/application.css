@@ -22,7 +22,8 @@ html {
     text-align: center;
 }
 
-#signup {
+#signup,
+#login {
     margin: auto;
     width: 30%;
     padding: 1rem;
@@ -52,3 +53,12 @@ label,
  .messages li {
     list-style-type: none;
  }
+
+/* .users table tr {
+    padding: 1rem;
+    border: 1px solid black;
+ }
+
+tbody tr {
+    border-bottom: 1px solid black;
+ } */
