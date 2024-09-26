@@ -6,7 +6,7 @@
 First, we need a method with which to hash the password. Add BCrypt to the <code>Gemfile</code>:
 
 ```ruby
-gem bcrypt
+    gem "bcrypt"
 ```
 
 Then run <code>bundle</code>.
@@ -14,7 +14,7 @@ Then run <code>bundle</code>.
 Now we need a model. Run:
 
 ```bash
-rails generate model user email password password_confirmation
+    rails generate model user email password password_confirmation
 ```
 
 Make use of BCrypt via the user model at <code>user.rb</code>:
