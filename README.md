@@ -3,11 +3,13 @@
 [https://dev.to/kevinluo201/building-a-simple-authentication-in-rails-7-from-scratch-2dhb](https://dev.to/kevinluo201/building-a-simple-authentication-in-rails-7-from-scratch-2dhb)
 
 ## 1. Build a model with a password
-First, we need a method with which to hash the password.
+First, we need a method with which to hash the password. Add BCrypt to the <code>Gemfile</code>:
 
 ```ruby
 gem bcrypt
 ```
+
+Then run <code>bundle</code>.
 
 Now we need a model. Run:
 
@@ -25,6 +27,8 @@ Make use of BCrypt via the user model at <code>user.rb</code>:
 ```
 
 Also add validations for email, and so on.
+
+At this point, run <code>rails db:migrate</code>.
 
 ## 2. Controllers to deal with user creation
 Now, a matching controller, but only with index (to show users), new (to build the form), and create (to POST to):
