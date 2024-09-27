@@ -2,6 +2,8 @@
 
 https://dev.to/kevinluo201/building-a-simple-authentication-in-rails-7-from-scratch-2dhb
 
+https://www.writesoftwarewell.com/rails-sessions/
+
 Install <code>BCrypt</code> with <code>bundle</code>.
 
 Create model user with <code>name</code>, <code>password</code>, and <code>password_confirmation</code>.

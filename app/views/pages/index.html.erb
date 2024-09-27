@@ -1,9 +1,9 @@
 <% if current_user %>
     <h1>Welcome, <%= current_user.name %></h1>
     <h2>My Account</h2>
+    <%= link_to "View Account", "/pages/secret" %>
 <% else %>
     <h1>Index Page</h1>
     <%= link_to "Login", new_user_session_path %></br />
+    <p>If you were logged in, you could access the <%= link_to "Secret Page", "/pages/secret" %>
 <% end %>
-
-<%= link_to "View Account", "/pages/secret" %>

@@ -156,6 +156,50 @@ Next, you need to add sessions.
 
 # Sessions
 
+First, start by generating a controller for sessions, in this case called <code>user_sessions</code>:
+
+```bash
+  rails generate controller user_sessions new create 
+```
+
+This only has two actions: a GET to the login page, and a POST to check whether the password_digest input here matches the one stored in the database. Open up the controller and add:
+
+```ruby 
+class UserSessionsController < ApplicationController
+
+  def new 
+    # Interestingly, this starts off with no pre-loaded data. 
+    # It does, however, allow for the form to be generated based on the model.
+    @user = User.new 
+  end 
+
+  def create 
+    # This is populated by the information filled out in the login page
+    # and then @user.authenticate (supplied by has_secure_password)
+    # will return true if the details match.
+    @user = User.find_by(name: params[:user][:name])
+
+    # If user exists and the credentials are right, create a session containing the user's ID.
+    # Remember: authenticate and find_by both access via params, which is a nested hash. 
+    # params = { user => { :name => "value", :password => "value" } }
+    # so you have to user params[:user][:password].
+    if @user && @user.authenticate(params[:user][:password])
+      session[:user_id] = @user.id # Use this in the current_user method in a moment
+      redirect_to root_path
+    else 
+      flash[:alert] = "Login failed"
+      redirect_to new_user_session_path # Back to login page
+    end
+  end
+end
+```
+
+Now that the logic is in place, the view for the login page needs to be created. We have the apparatus to build the form around the user model because of the controller, so it's a simple form.
+
+
+
+
+
 After this, you need to add cookies, logouts, and password resets.
 
 # Cookies (permanent authentication)
