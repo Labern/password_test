@@ -46,26 +46,28 @@ resources :user, only: [:index, :new, :create]
 Open up <code>users_controller.rb</code> and add the relevant instance methods:
 
 ```ruby
-  def index
-    @users = User.all
-  end 
+  class UsersController < Application Controller
+    def index
+        @users = User.all
+    end 
 
-  def new 
-    @user = User.new
-  end 
+    def new 
+        @user = User.new
+    end 
 
-  def create 
-    @user = User.new(user_params)
+    def create 
+        @user = User.new(user_params)
 ```
 
 Note the use of <code>user_params</code>, which is an instance method of the UsersController class. We will add this as a private instance method. First, however, still inside <code>users_controller.rb</code>, add the finishing touches to the create method:
 
 ```ruby
-    if @user.save
-      flash[:notice] = "User created."
-    else 
-      flash[:alert] = "User not created."
-      render :new, status: :unprocessable_entity
+        if @user.save
+        flash[:notice] = "User created."
+        else 
+        flash[:alert] = "User not created."
+        render :new, status: :unprocessable_entity
+        end
     end
   end
 ```
