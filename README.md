@@ -89,7 +89,7 @@ Note that while the actual terms in the database schema is password_digest, it i
 
 Onto the views.
 
-## 3. Views for user signup.
+## 3. Views for user signup
 
 Build out the forms to create users, displaying errors, at <code>new.html.erb</code>:
 
@@ -154,7 +154,7 @@ Open Sqlite3 and pull out the database via:
 
 Next, you need to add sessions.
 
-# Sessions
+# Sessions (encrypted cookies)
 
 First, start by generating a controller for sessions, in this case called <code>user_sessions</code>:
 
@@ -194,9 +194,96 @@ class UserSessionsController < ApplicationController
 end
 ```
 
-Now that the logic is in place, the view for the login page needs to be created. We have the apparatus to build the form around the user model because of the controller, so it's a simple form.
+Now that the logic is in place, the view for the login page needs to be created. We have the apparatus to build the form around the user model because of the controller, so it's a simple form. Add this to <code>new.html.erb</code>:
 
-[...]
+```erb
+  <h1>Login</h1>
+  <% form_for model: @user, url: user_sessions_path do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+    </div>
+    <p>
+      <%= f.submit "Login" %>
+    </p>
+  <% end %>
+```
+
+Note here that we are using name, but you might want email, and therefore email_field, to be your user's username while logging in.
+
+# Current_user
+
+This is the most important part of all: adding a helper method to ApplicationController so that we can recognise whether a user has logged in on any page. Go to <code>application_controller.rb</code> and add:
+
+```ruby
+  helper_method :current_user
+
+  def current_user
+    @current_user ||= session[:user_id] && User.find_by(id: session[:user_id])
+  end
+```
+
+It is vital to understand this code. First, helper_method allows this method to be used everywhere. Second, note the implicit return of current_user: @current_user. This means whenever the user is logged in, calling current_user will bring up the relevant user's record in the database. Third, note the last part: <code>User.find_by</code> says "get me a user matching..." and the next part says "the id which matches the id stored in session[:user_id]". This means that logging in checks for a password and, if successful, makes the user's data acessible everywhere that current_user is implemented.
+
+# Adding a "My Account" / private page 
+
+Now that we have a way for the user to login, there should be something for the user to do that is explicitly theirs — that is, something they can only see if they are logged in. This is where you'd want to show their orders, their posts, etc., but in this case, the home page can simply recognise them. To do this, add this to <code>pages_controller.rb</code>:
+
+```ruby
+  class PagesController < ApplicationController
+  
+    def index
+    end
+
+    def secret
+      if current_user.blank?      # You could create a better method than this, but it works.
+        render plain: "401 Unauthorised" 
+    end
+
+  end
+```
+
+Now we need to recognise the user inside the views. First, <code>index.html.erb</code>:
+
+```erb
+  <% if current_user %>
+    <h1>Welcome, <%= current_user.name %>
+  <% else %>
+    <h1>This is the index page</h1>
+    <p>If you were logged in, you'd see your account here.</p>
+    <%= link_to "Login", new_user_session_path %>
+  <% end %>
+
+  <%= link_to "Secret page", "/pages/secret" %>
+```
+
+We will change this in a moment, but this exposes you to the underlying mechanisms. Now, add the following to <code>secret.html.erb</code>:
+
+```erb
+  <h1>Secret page</h1>
+```
+
+Here you can, if you wish, use current_user to show the user some of their things. For example, if you add a post model and link them via has_many, etc., you can use current_user.posts, and so on.
+
+# Custom route for login
+
+We now need to update the routes, namely adding:
+
+```ruby 
+  resources :user_sessions, only: [:new, :create]
+```
+
+However, in order to make things more consistent, add this to your <code>routes.rb</code>:
+
+```ruby 
+  get "/login", to: "user_sessions#new"
+```
+
+This allows /login to be the login page, and you can also use <code>get_login_path</code> in link_to.
 
 # Cookies (permanent authentication)
 
