@@ -15,4 +15,9 @@ class UserSessionsController < ApplicationController
       redirect_to new_user_session_path
     end
   end
+
+  def destroy
+    session[:user_id] = nil 
+    redirect_to root_path
+  end
 end

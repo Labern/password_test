@@ -196,16 +196,42 @@ end
 
 Now that the logic is in place, the view for the login page needs to be created. We have the apparatus to build the form around the user model because of the controller, so it's a simple form.
 
-
-
-
-
-After this, you need to add cookies, logouts, and password resets.
+[...]
 
 # Cookies (permanent authentication)
 
+Session[:user_id] implements the session via a cookie; even when you close and re-open the site, it remembers you. The cookie used is also encrypted.
+
 # Logouts 
 
-# Password resets 
+As the user is now logged in via a cookie, in order for them to logout, we need to delete the cookie. To do this, we need to set <code>session[:user_id]</code> to nil. First, add a method to the controller:
 
-This is a full authentication system which lets users create an account with a secure password, and can be used for all powerful sites.
+```ruby 
+  def destroy
+    session[:user_id] = nil
+    redirect_to root_path
+  end
+```
+
+Then, update <code>routes.rb</code> so that it now knows that it will be getting a DELETE request via the destroy method.
+
+Head to a view, in this case the home page, where you want the logout to be (the best place would be in a nav partial accessible from everywhere), and add:
+
+```ruby 
+  <%= link_to "Logout", user_session_path(current_user), data: { turbo_method: :delete } %>
+```
+
+Clicking this will delete the cookie. 
+
+It's important to remember that <code>current_user</code> was defined in <code>ApplicationController</code>, which means it is available everywhere.
+
+# Next
+
+You now have a working user model with a login and logout. What you need next is:
+
+- A password_confirmation via email when they signup;
+
+- A remember me function (so that the cookie is only stored if the user requests it, using a different method otherwise);
+
+- A password reset.
+
